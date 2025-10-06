@@ -1,0 +1,149 @@
+/* material_theme.css - Material inspired theme for CleanPlus */
+
+/* Base variables (company palette inspired by your logo) */
+:root{
+  --cp-primary: #0aa24a;   /* green shade - used in top navbar */
+  --cp-primary-light: #2fc86a;
+  --cp-accent: #2d2a82;    /* deep purple accent from logo */
+  --cp-bg: #f6f7f9;        /* page subtle grey */
+  --cp-surface: #ffffff;   /* white cards */
+  --cp-text: #1f2a37;
+  --cp-muted: #6b7280;
+  --cp-radius: 10px;
+  --cp-gap: 14px;
+}
+
+/* Apply page background */
+body, .layout, .page-body {
+  background: var(--cp-bg) !important;
+  color: var(--cp-text) !important;
+}
+
+/* Top navbar: light green shade */
+header.navbar, .navbar, .navbar .navbar-inner {
+  background: linear-gradient(90deg, rgba(10,162,74,0.95), rgba(47,200,106,0.95)) !important;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  color: white !important;
+}
+
+/* Show logo in navbar (space reserved) */
+.navbar .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.navbar .brand img.cp-logo {
+  height: 34px;
+  width: auto;
+  border-radius: 6px;
+  background: transparent;
+  padding: 2px;
+}
+
+/* Cards & surfaces (material look) */
+.card, .frappe-card, .list-item, .form-layout .card {
+  background: var(--cp-surface) !important;
+  border-radius: var(--cp-radius) !important;
+  box-shadow: 0 6px 20px rgba(31,42,55,0.06) !important;
+  padding: calc(var(--cp-gap) * 0.9) !important;
+}
+
+/* Buttons */
+.btn-primary {
+  background: linear-gradient(180deg, var(--cp-primary), var(--cp-primary-light)) !important;
+  color: white !important;
+  border-radius: 999px !important;
+  box-shadow: 0 6px 14px rgba(10,162,74,0.12);
+}
+
+/* Muted text */
+.small, .text-muted, .help {
+  color: var(--cp-muted) !important;
+}
+
+/* Sidebar hidden — hide default left menu in Desk */
+body .layout-side-section, /* old layout */
+body .sidebar, /* old class variants */
+body .page-sidebar {
+  display: none !important;
+}
+
+/* Expand main area when sidebar hidden */
+body .layout-main-section, body .page-content {
+  width: 100% !important;
+  margin-left: 0 !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+
+/* Shortcuts panel (top area below navbar) */
+.cp-shortcuts {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 14px 18px;
+  margin: 16px 8px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.8));
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(18,22,26,0.04);
+}
+
+/* Shortcut item */
+.cp-shortcut {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  min-width: 160px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: white;
+  cursor: pointer;
+  transition: transform .12s ease, box-shadow .12s ease;
+  user-select: none;
+}
+.cp-shortcut:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(31,42,55,0.08);
+}
+
+.cp-shortcut .cp-ic {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: linear-gradient(180deg, var(--cp-primary), var(--cp-primary-light));
+  color: white;
+  font-weight: 700;
+}
+
+/* Landing page main hero */
+.cp-landing-hero {
+  max-width: 1200px;
+  margin: 36px auto;
+  padding: 36px;
+  border-radius: 14px;
+  background: white;
+  box-shadow: 0 12px 30px rgba(18,22,26,0.06);
+}
+.cp-landing-hero h1 {
+  margin: 0 0 8px 0;
+  font-size: 34px;
+  color: var(--cp-text);
+}
+
+/* Make sure the logo is visible on top of all page types */
+img.cp-logo-global {
+  max-height: 40px;
+}
+
+/* Responsive: stack shortcuts on small screens */
+@media (max-width: 860px) {
+  .cp-shortcuts {
+    padding: 10px;
+  }
+  .cp-shortcut {
+    min-width: 48%;
+  }
+}

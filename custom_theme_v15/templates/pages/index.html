@@ -1,0 +1,39 @@
+{% extends "templates/web.html" %}
+{% block page_content %}
+<div class="cp-landing-hero">
+  <div style="display:flex;align-items:center;gap:20px;">
+    <img src="/assets/custom_theme_v15/images/cleanplusn.png" style="height:90px;border-radius:8px;">
+    <div>
+      <h1>CLEAN Plus</h1>
+      <div class="small">Welcome to your ERP — quick access and dashboards.</div>
+    </div>
+  </div>
+
+  <div style="margin-top:22px;">
+    <p>Use the shortcuts below to navigate quickly or customize them via <code>/apps/custom_theme_v15/public/shortcuts.json</code>.</p>
+
+    <div id="cp-landing-shortcuts" style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
+      <!-- A simple client side render of the same JSON file -->
+    </div>
+  </div>
+</div>
+
+<script>
+  (function(){
+    fetch('/assets/custom_theme_v15/shortcuts.json').then(r => r.json()).then(data => {
+      var container = document.getElementById('cp-landing-shortcuts');
+      if(!Array.isArray(data)) return;
+      data.forEach(function(s){
+        var el = document.createElement('a');
+        el.className = 'cp-shortcut';
+        el.href = (s.href || '#');
+        el.style.display = 'inline-flex';
+        el.style.textDecoration = 'none';
+        el.style.color = 'inherit';
+        el.innerHTML = '<div class="cp-ic">'+(s.icon_text||s.title[0])+'</div><div style="padding-left:10px;"><div style="font-weight:600">'+s.title+'</div><div class="small">'+(s.description||'')+'</div></div>';
+        container.appendChild(el);
+      });
+    }).catch(()=>{});
+  })();
+</script>
+{% endblock %}

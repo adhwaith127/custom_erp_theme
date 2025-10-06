@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Sales Invoice - List",
+    "route": ["List", "Sales Invoice"],
+    "description": "Open sales invoices",
+    "icon_text": "SI"
+  },
+  {
+    "title": "New Item",
+    "route": ["Form", "Item", ""],
+    "description": "Create a product or item",
+    "icon_text": "IT"
+  },
+  {
+    "title": "Customer",
+    "route": ["List", "Customer"],
+    "description": "Customer records",
+    "icon_text": "CU"
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "css": {
+    "page": [
+      "public/css/custom_theme.css",
+      "public/css/material_theme.css"
+    ]
+  },
+  "js": {
+    "page": [
+      "public/js/custom_theme.js",
+      "public/js/material_theme.js"
+    ]
+  }
+}

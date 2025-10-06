@@ -1,0 +1,71 @@
+/* custom_theme_v15 - base stylesheet */
+:root{
+  --primary: #006db6;
+  --accent: #00a3e0;
+  --bg: #ffffff;
+  --text: #222222;
+  --card-bg: #ffffff;
+  --muted: #6b6b6b;
+  --radius: 8px;
+  --gap: 12px;
+}
+
+/* Dark variant variables (will be applied when .theme-variant-dark is on body) */
+.theme-variant-dark {
+  --bg: #0f1720;
+  --text: #e6eef6;
+  --card-bg: #0b1220;
+  --muted: #9aa6b2;
+}
+
+/* Compact variant */
+.theme-variant-compact {
+  --gap: 6px;
+  --radius: 4px;
+}
+
+/* Base resets for Desk widgets */
+body {
+  background: var(--bg) !important;
+  color: var(--text) !important;
+  transition: background .2s ease, color .2s ease;
+}
+
+.layout-main-section, .layout-side-section {
+  background: transparent !important;
+}
+
+/* Card styling example */
+.card, .frappe-card, .list-item, .form-layout .card {
+  background: var(--card-bg) !important;
+  border-radius: var(--radius) !important;
+  box-shadow: 0 6px 18px rgba(10,10,10,0.06);
+  padding: calc(var(--gap) * 1) !important;
+}
+
+/* Header / topbar tweaks */
+header.navbar, .navbar {
+  background: linear-gradient(90deg, var(--primary), var(--accent)) !important;
+  color: #fff !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Buttons */
+.btn-primary {
+  background: linear-gradient(180deg, var(--primary), var(--accent)) !important;
+  border: none !important;
+  color: #fff !important;
+  border-radius: 999px !important;
+  padding-left: 18px !important;
+  padding-right: 18px !important;
+}
+
+/* Small utility */
+.theme-brand {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-weight:600;
+}
+
+/* Add more selectors as you customize */
